@@ -13,7 +13,6 @@
 		BEE64DCF2BA2E52100790EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE64DCD2BA2E52100790EA7 /* Main.storyboard */; };
 		BEE64DD12BA2E52200790EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEE64DD02BA2E52200790EA7 /* Assets.xcassets */; };
 		BEE64DD42BA2E52200790EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE64DD22BA2E52200790EA7 /* LaunchScreen.storyboard */; };
-		BEE64DDC2BA2E60D00790EA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE64DDB2BA2E60D00790EA7 /* GoogleService-Info.plist */; };
 		BEE64DDF2BA2E66800790EA7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BEE64DDE2BA2E66800790EA7 /* FirebaseAnalytics */; };
 		BEE64DE12BA2E66800790EA7 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = BEE64DE02BA2E66800790EA7 /* FirebaseAnalyticsOnDeviceConversion */; };
 		BEE64DE32BA2E66800790EA7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BEE64DE22BA2E66800790EA7 /* FirebaseAnalyticsSwift */; };
@@ -44,6 +43,7 @@
 		BEE64E152BA2EAA800790EA7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE64E142BA2EAA800790EA7 /* FeedViewController.swift */; };
 		BEE64E172BA2EAB400790EA7 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE64E162BA2EAB400790EA7 /* UploadViewController.swift */; };
 		BEE64E192BA2EABF00790EA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE64E182BA2EABF00790EA7 /* SettingsViewController.swift */; };
+		BEE64E1C2BA3189A00790EA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE64E1B2BA3189A00790EA7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,10 +55,10 @@
 		BEE64DD02BA2E52200790EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEE64DD32BA2E52200790EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEE64DD52BA2E52200790EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEE64DDB2BA2E60D00790EA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEE64E142BA2EAA800790EA7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BEE64E162BA2EAB400790EA7 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		BEE64E182BA2EABF00790EA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BEE64E1B2BA3189A00790EA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 				BEE64DD22BA2E52200790EA7 /* LaunchScreen.storyboard */,
 				BEE64DD02BA2E52200790EA7 /* Assets.xcassets */,
 				BEE64DD52BA2E52200790EA7 /* Info.plist */,
-				BEE64DDB2BA2E60D00790EA7 /* GoogleService-Info.plist */,
+				BEE64E1B2BA3189A00790EA7 /* GoogleService-Info.plist */,
 			);
 			path = sharePhoto;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE64DD42BA2E52200790EA7 /* LaunchScreen.storyboard in Resources */,
-				BEE64DDC2BA2E60D00790EA7 /* GoogleService-Info.plist in Resources */,
+				BEE64E1C2BA3189A00790EA7 /* GoogleService-Info.plist in Resources */,
 				BEE64DD12BA2E52200790EA7 /* Assets.xcassets in Resources */,
 				BEE64DCF2BA2E52100790EA7 /* Main.storyboard in Resources */,
 			);
