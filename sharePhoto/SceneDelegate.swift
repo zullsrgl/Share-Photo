@@ -13,12 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        var user = Auth.auth().currentUser
+        let user = Auth.auth().currentUser
         if user != nil {
             let board = UIStoryboard(name: "Main", bundle: nil)
             let tabBar = board.instantiateViewController(identifier: "tabBar") as? UITabBarController
             window?.rootViewController = tabBar
         }
+       
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
