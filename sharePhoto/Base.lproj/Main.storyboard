@@ -138,7 +138,9 @@
                             <constraint firstItem="yqn-YE-5E0" firstAttribute="leading" secondItem="zaX-cY-cFI" secondAttribute="leading" constant="38" id="yqA-jL-Mfj"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Upload" image="square.and.arrow.up" catalog="system" id="VtF-bL-G2P"/>
+                    <tabBarItem key="tabBarItem" title="Upload" image="square.and.arrow.up" catalog="system" id="VtF-bL-G2P">
+                        <color key="badgeColor" red="1" green="0.4941176471" blue="0.83137254900000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="discriptionTextField" destination="Tm7-bm-yxR" id="fMJ-v7-Oqw"/>
                         <outlet property="photoImageView" destination="yqn-YE-5E0" id="jq5-ho-NJE"/>
@@ -172,7 +174,9 @@
                             <constraint firstItem="lQc-tE-GJv" firstAttribute="centerX" secondItem="tTe-cE-oRs" secondAttribute="centerX" id="wE7-cl-Fsp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Tpo-TT-dcP"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Tpo-TT-dcP">
+                        <color key="badgeColor" red="1" green="0.4941176471" blue="0.83137254900000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="tologInVc" modalPresentationStyle="fullScreen" id="ww5-R0-Aes"/>
                     </connections>
@@ -188,14 +192,79 @@
                     <view key="view" contentMode="scaleToFill" id="Tw1-e0-pga">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mMi-Jy-Ho8">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="310" id="qdX-9u-lni" customClass="FeedTableViewCell" customModule="sharePhoto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="310"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qdX-9u-lni" id="qB8-Rd-end">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="310"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O15-re-bcW">
+                                                    <rect key="frame" x="20" y="24" width="300" height="8"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo16px.png" translatesAutoresizingMaskIntoConstraints="NO" id="AeF-EF-WUu">
+                                                    <rect key="frame" x="26" y="55.999999999999986" width="341" height="186.66666666666663"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="179" id="PkO-SD-jZ0"/>
+                                                        <constraint firstAttribute="width" secondItem="AeF-EF-WUu" secondAttribute="height" multiplier="327:179" id="XVR-aI-YSb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="yorum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tY-Sd-j8D">
+                                                    <rect key="frame" x="26" y="266.66666666666669" width="300" height="20.333333333333314"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AeF-EF-WUu" firstAttribute="top" secondItem="O15-re-bcW" secondAttribute="bottom" constant="24" id="1A1-oe-wyn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7tY-Sd-j8D" secondAttribute="bottom" constant="12" id="87Z-Ec-jGc"/>
+                                                <constraint firstItem="AeF-EF-WUu" firstAttribute="leading" secondItem="qB8-Rd-end" secondAttribute="leadingMargin" constant="6" id="9bS-JV-63c"/>
+                                                <constraint firstItem="7tY-Sd-j8D" firstAttribute="leading" secondItem="qB8-Rd-end" secondAttribute="leading" constant="26" id="FI6-kP-guz"/>
+                                                <constraint firstAttribute="trailing" secondItem="O15-re-bcW" secondAttribute="trailing" constant="73" id="L6P-Xc-w3E"/>
+                                                <constraint firstItem="7tY-Sd-j8D" firstAttribute="top" secondItem="AeF-EF-WUu" secondAttribute="bottom" constant="24" id="NN1-Gv-VZU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="AeF-EF-WUu" secondAttribute="trailing" constant="6" id="QZb-vg-cid"/>
+                                                <constraint firstItem="O15-re-bcW" firstAttribute="top" secondItem="qB8-Rd-end" secondAttribute="top" constant="24" id="bap-bk-ExH"/>
+                                                <constraint firstItem="O15-re-bcW" firstAttribute="leading" secondItem="qB8-Rd-end" secondAttribute="leading" constant="20" symbolic="YES" id="ehz-Ye-p9K"/>
+                                                <constraint firstAttribute="trailing" secondItem="7tY-Sd-j8D" secondAttribute="trailing" constant="67" id="oPz-cH-hE3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblEmail" destination="O15-re-bcW" id="8rr-Ep-Ojd"/>
+                                            <outlet property="lblYorum" destination="7tY-Sd-j8D" id="OGr-tF-PAC"/>
+                                            <outlet property="postImageView" destination="AeF-EF-WUu" id="lVU-aQ-2zw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kHi-Oy-U2E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mMi-Jy-Ho8" firstAttribute="bottom" secondItem="kHi-Oy-U2E" secondAttribute="bottom" id="0QY-4N-fGe"/>
+                            <constraint firstAttribute="trailing" secondItem="mMi-Jy-Ho8" secondAttribute="trailing" id="bi8-vV-DlM"/>
+                            <constraint firstItem="mMi-Jy-Ho8" firstAttribute="top" secondItem="kHi-Oy-U2E" secondAttribute="top" id="eho-R8-Elj"/>
+                            <constraint firstItem="mMi-Jy-Ho8" firstAttribute="leading" secondItem="Tw1-e0-pga" secondAttribute="leading" id="umS-oD-D9h"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" image="homekit" catalog="system" id="Oba-Xa-47M"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="homekit" catalog="system" id="Oba-Xa-47M">
+                        <color key="badgeColor" red="1" green="0.4941176471" blue="0.83137254900000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="mMi-Jy-Ho8" id="7IN-UV-WAC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRz-Ye-epr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="-942"/>
+            <point key="canvasLocation" x="2232.8244274809158" y="-942.25352112676057"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dsT-4l-zAN">
@@ -206,6 +275,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.49411764705882355" blue="0.83137254901960778" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="jfr-ZP-WpP" kind="relationship" relationship="viewControllers" id="8SH-mE-6I0"/>
@@ -221,6 +291,7 @@
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="logo16px.png" width="17.454545974731445" height="17.454545974731445"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <image name="square.and.arrow.up.on.square" catalog="system" width="113" height="128"/>
         <systemColor name="systemBackgroundColor">

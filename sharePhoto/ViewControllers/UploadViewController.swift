@@ -7,7 +7,8 @@
 
 import UIKit
 import FirebaseStorage
-
+import FirebaseFirestore
+import Firebase
 class UploadViewController: UIViewController  , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var discriptionTextField: UITextField!
@@ -45,22 +46,42 @@ class UploadViewController: UIViewController  , UIImagePickerControllerDelegate,
         let storageRef = storage.reference()
         let uuid = UUID().uuidString
         let mediaFolder = storageRef.child("media")
-        if let data = photoImageView.image?.jpegData(compressionQuality: 0.5){
+        if let data = photoImageView.image?.jpegData(compressionQuality: 0.1){
             let imageRef = mediaFolder.child("\(uuid).jpg")
             imageRef.putData(data, metadata: nil) { storagemetadata, error in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    self.alertMessage(title: "Hata!", subTitle: error?.localizedDescription ?? "Hata oluşty lütfen tekrar deneyin")
                 }else{
                     imageRef.downloadURL { url, error in
                         if error == nil {
                             let imageUrl = url?.absoluteString
-                            print(imageUrl)
+                    
+                            let firestoreDatabase = Firestore.firestore()
+                            let firestorePost = ["gorselurl" : imageUrl , "yorum": self.discriptionTextField.text! , "email" : Auth.auth().currentUser!.email! , "tarih" : FieldValue.serverTimestamp()]
+                            firestoreDatabase.collection("Post").addDocument(data: firestorePost) { error in
+                                if error != nil {
+                                    var tes  = "nrekg"
+                                    tes.isEmpty
+                                    self.alertMessage(title: "Hata", subTitle: error?.localizedDescription ?? "Hata")
+                                }else{
+                                    self.discriptionTextField.text = ""
+                                    self.photoImageView.image = UIImage(systemName: "square.and.arrow.up.on.square")
+                                    self.tabBarController?.selectedIndex = 0
+                                }
+                            }
                         }
                     }
                 }
                
             }
         }
+    }
+    
+    func alertMessage(title: String, subTitle: String) {
+        let alert = UIAlertController(title: title, message: subTitle, preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
 }
