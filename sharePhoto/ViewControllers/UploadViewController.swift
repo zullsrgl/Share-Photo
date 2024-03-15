@@ -60,8 +60,6 @@ class UploadViewController: UIViewController  , UIImagePickerControllerDelegate,
                             let firestorePost = ["gorselurl" : imageUrl , "yorum": self.discriptionTextField.text! , "email" : Auth.auth().currentUser!.email! , "tarih" : FieldValue.serverTimestamp()]
                             firestoreDatabase.collection("Post").addDocument(data: firestorePost) { error in
                                 if error != nil {
-                                    var tes  = "nrekg"
-                                    tes.isEmpty
                                     self.alertMessage(title: "Hata", subTitle: error?.localizedDescription ?? "Hata")
                                 }else{
                                     self.discriptionTextField.text = ""
